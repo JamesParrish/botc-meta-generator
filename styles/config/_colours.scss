@@ -1,0 +1,9 @@
+$colours: (
+  "black": #000,
+  "white": #fff,
+);
+
+$page-colours: (
+  "page-background": map-get($colours, "black"),
+  "page-colour": map-get($colours, "white"),
+);

@@ -1,0 +1,115 @@
+@mixin type-scale($fontsize: zeta) {
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $scale: map-get($modular-scale, scale-#{$name});
+    $font-size: map-get($scale, $fontsize);
+    $base-size: map-get($scale, zeta);
+
+    @include only($name) {
+      font-size: #{calc($font-size / $base-size)}rem;
+    }
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-weight: map-get($typography, "base-font-weight");
+  line-height: map-get($typography, "base-line-height");
+  font-family: map-get($typography, "base-font-family");
+  color: map-get($page-colours, "page-colour");
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $scale: map-get($modular-scale, scale-#{$name});
+    $font-size: map-get($scale, zeta);
+
+    @include only($name) {
+      font-size: #{$font-size}px;
+    }
+  }
+}
+
+h1 {
+  @extend %typography-h1-style;
+
+  @extend %typography-gamma-size;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %typography-hx-style;
+}
+
+h2 {
+  @extend %typography-gamma-size;
+}
+
+h3 {
+  @extend %typography-delta-size;
+}
+
+h4 {
+  @extend %typography-epsilon-size;
+}
+
+h5 {
+  @extend %typography-zeta-size;
+}
+
+h6 {
+  @extend %typography-eta-size;
+}
+
+%typography-hx-style {
+  line-height: map-get($typography, "heading-line-height");
+  font-family: map-get($typography, "heading-font-family");
+  @extend %typography-h-style;
+}
+
+%typography-h1-style {
+  line-height: map-get($typography, "heading-alt-line-height");
+  font-family: map-get($typography, "heading-alt-font-family");
+  font-weight: bold;
+  text-transform: uppercase;
+  @extend %typography-h-style;
+}
+
+%typography-h-style {
+  width: 100%;
+  text-align: center;
+}
+
+%typography-beta-size {
+  @include type-scale($fontsize: beta);
+}
+
+%typography-gamma-size {
+  @include type-scale($fontsize: gamma);
+}
+
+%typography-delta-size {
+  @include type-scale($fontsize: delta);
+}
+
+%typography-epsilon-size {
+  @include type-scale($fontsize: epsilon);
+}
+
+%typography-zeta-size {
+  @include type-scale($fontsize: zeta);
+}
+
+%typography-eta-size {
+  @include type-scale($fontsize: eta);
+}
+
+%typography-theta-size {
+  @include type-scale($fontsize: theta);
+}
