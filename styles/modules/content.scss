@@ -1,0 +1,11 @@
+.content {
+    margin: 5rem;
+
+    &--section {
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 // https://alligator.io/css/minimal-css-reset/
 html {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 62.5%;
     overflow-y: scroll;
     -webkit-tap-highlight-color: rgba(map-get($page-colours, "page-colour"), 0);
 }
@@ -15,6 +15,7 @@ html {
 body {
     overflow: hidden;
     overflow-x: hidden;
+    font-size: 1.6rem;
 }
 
 body,

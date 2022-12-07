@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Moo from './moo/moo'
+import MetaGenerator from './meta-generator/meta-generator';
 import '../styles/styles.scss';
 
-ReactDOM.render(<Moo />, document.getElementById('root'));
+ReactDOM.render(<MetaGenerator />, document.getElementById('root'));

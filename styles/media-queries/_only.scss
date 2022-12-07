@@ -1,5 +1,6 @@
 @mixin only($key) {
-    $min-width: breakpoint-value($key);
+    //$min-width: breakpoint-value($key);
+    $min-width: 10rem;
     $media-query: "screen and (min-width: #{$min-width})";
   
     $max-width: null;
